@@ -59,6 +59,7 @@ dart pub add intl
 import 'package:intl/intl.dart';
 ```
 **其中**`pubspec.yaml`是依赖管理核心文件
+可以在`analysis_options.yaml`文件中设置不需要检查的语法规则
 
 # 学习资料
 https://www.dartcn.com/guides/libraries/library-tour
