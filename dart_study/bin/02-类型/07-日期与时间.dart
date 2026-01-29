@@ -2,9 +2,10 @@
 import 'package:intl/intl.dart';
 
 void main(List<String> args) {
-  // method1();
+  method1();
   method2();
-  // method3();
+  method3();
+  method4();
 }
 
 // 1️⃣时间的创建与比较
@@ -33,8 +34,37 @@ void method1() {
   print(dt1.isAtSameMomentAs(dt2)); // false
 }
 
-// 2️⃣时间的转换与计算
+// 2️⃣Duration → 一段时间的长度（不是时间点）
+// 它表示的是【多久】，而不是【什么时候】
 void method2() {
+  // 所有单位都会被自动换算并累加
+  var duration1 = Duration(
+    days: 1,
+    hours: 2,
+    minutes: 3,
+    seconds: 4,
+    milliseconds: 500,
+    microseconds: 100,
+  );
+
+  // 获取 Duration 对象对应的时间
+  print(duration1); // 26:03:04.500100
+  print(duration1.inHours); // 26
+  print(duration1.inSeconds); // 93784
+
+  // 转换的时候都是向下取整, 90秒会被转换为1分钟
+  print(Duration(seconds: 90).inMinutes);
+
+  // Duration的运算
+  var d1 = Duration(seconds: 10);
+  var d2 = Duration(seconds: 5);
+
+  print(d1 + d2); // 15s
+  print(d1 - d2); // 5s
+}
+
+// 3️⃣时间的转换与计算
+void method3() {
   // 当前时间
   DateTime now = DateTime.now();
 
@@ -67,8 +97,8 @@ void method2() {
   print(dateFormat.format(now)); // 2026-01-24 19:19:23
 }
 
-// 3️⃣毫秒
-void method3() {
+// 4️⃣毫秒
+void method4() {
   int ms = DateTime.now().millisecondsSinceEpoch;
   print(ms); // 1769248209559
 
