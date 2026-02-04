@@ -58,6 +58,19 @@ dart pub add intl
 # 在项目中使用依赖包 
 import 'package:intl/intl.dart';
 ```
+```bash
+# 在pubspec.yaml中添加对应的依赖包
+dependencies:
+  path: ^1.9.0
+  intl: ^0.20.2
+  csv: ^5.0.2
+  yaml: ^3.1.2
+
+# 然后执行安装命令
+dart pub get
+# 或者
+flutter pub get
+```
 **其中**`pubspec.yaml`是依赖管理核心文件
 可以在`analysis_options.yaml`文件中设置不需要检查的语法规则
 
